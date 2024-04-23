@@ -1,0 +1,66 @@
+<!DOCTYPE html> 
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>QR CODE Genertor byPJordanLLC</title>
+	<style>
+	body {
+		font-family: Arial, sans-serif;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		background-color: #f0f0f0;
+	}
+
+	.container{
+		text-align: center;
+		padding: 20px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		background-color: #fff;
+	}
+
+	#linkInput {
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+
+	#qrCode {
+		width: 200px;
+		height: 200px;
+		margin-top: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>Generate QR code</h2>
+		<input type="text" id="linkInput" placeholder="Enter Link Here..">
+		<button onclick="generateQR()">Generate QR Code</button>
+		<div id="qrCode"></div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+	<script>
+		function generateQR() {
+            var linkInput = document.getElementById("linkInput").value;
+            var qrCodeDiv = document.getElementById("qrCode");
+            qrCodeDiv.innerHTML = ""; // Clear previous QR code
+            var qr = new QRCode(qrCodeDiv, {
+                text: linkInput,
+                width: 200,
+                height: 200,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.L // Error correction level
+            });
+    }
+ </script>
+</body>
+</html>
+
+
