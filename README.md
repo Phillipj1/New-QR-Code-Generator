@@ -1,1 +1,2 @@
 # New-QR-Code-Generator
+This is a simple web page that allows users to generate QR codes dynamically based on a provided link. It consists of an input field where users can enter a URL, a button to generate the QR code, and a display area where the generated QR code will appear. The QR code generation is handled using the QRCode.js library, which is included in the page using a script tag. When the user clicks the "Generate QR Code" button, the entered URL is converted into a QR code and displayed on the page.
